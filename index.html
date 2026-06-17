@@ -95,7 +95,7 @@
         html.lang-th [lang-content="th"] {
             line-height: 1.85 !important;
             letter-spacing: 0.03em !important;
-            word-break: keep-all; /* Keeps words from breaking awkwardly */
+            /* แก้ปัญหาล้นจอบนมือถือ: เอา word-break: keep-all; ออกเพื่อให้ Browser ตัดบรรทัดภาษาไทยอัตโนมัติ */
         }
         html.lang-th h1[lang-content="th"], 
         html.lang-th h2[lang-content="th"], 
@@ -135,7 +135,7 @@
     <main class="bluenight-glow min-h-screen">
         
         <!-- HERO SECTION (Oversized & Monumental) -->
-        <section class="pt-16 pb-16 sm:pt-24 sm:pb-24 text-center px-4">
+        <section class="pt-16 pb-16 sm:pt-24 sm:pb-24 text-center px-4 overflow-hidden">
             
             <!-- Sleek Badge -->
             <div class="inline-flex items-center space-x-2 bg-white/5 border border-white/10 text-white px-4 py-2 rounded-full text-xs font-semibold mb-10 tracking-wide opacity-0 animate-fade-in-up">
@@ -146,13 +146,13 @@
 
             <!-- Giant Brand Presentation -->
             <div class="max-w-5xl mx-auto mb-12 opacity-0 animate-fade-in-up delay-100">
-                <h1 class="text-6xl sm:text-8xl md:text-9xl font-black tracking-tighter text-white giant-title select-all">
+                <h1 class="text-[11vw] sm:text-7xl md:text-9xl font-black tracking-tighter text-white giant-title select-all">
                     Siam<span class="text-bluenight-accent">.Organic</span>
                 </h1>
             </div>
 
             <!-- Crisp Oversized Headline -->
-            <h2 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white leading-tight max-w-4xl mx-auto mb-8 opacity-0 animate-fade-in-up delay-200">
+            <h2 class="text-2xl sm:text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight max-w-4xl mx-auto mb-8 opacity-0 animate-fade-in-up delay-200">
                 <span lang-content="en">Build Thailand's Next Organic Brand On The Perfect Domain</span>
                 <span lang-content="th">สร้างแบรนด์ออร์แกนิกระดับประเทศบนโดเมนที่ใช่ที่สุด</span>
             </h2>
@@ -372,7 +372,7 @@
                 </div>
 
                 <!-- Comparison Table -->
-                <div class="overflow-x-auto">
+                <div class="w-full overflow-x-auto pb-4">
                     <div class="min-w-[600px] border border-white/10 rounded-2xl bg-white/[0.01] overflow-hidden">
                         
                         <!-- Table Header -->
@@ -530,12 +530,12 @@
                         </div>
 
                         <!-- Email Direct -->
-                        <div class="flex flex-col items-center sm:items-start text-center sm:text-left space-y-1">
+                        <div class="flex flex-col items-center sm:items-start text-center sm:text-left space-y-1 overflow-hidden w-full">
                             <span class="text-xs uppercase font-bold text-slate-500 tracking-wider" lang-content="en">Official Email</span>
                             <span class="text-xs uppercase font-bold text-slate-500 tracking-wider" lang-content="th">อีเมลอย่างเป็นทางการ</span>
-                            <div class="flex items-center space-x-2">
-                                <a href="mailto:pharawee@siam.organic" class="text-xl sm:text-2xl font-black text-white hover:text-bluenight-accent transition-colors">pharawee@siam.organic</a>
-                                <button onclick="copyToClipboard('pharawee@siam.organic')" class="text-slate-500 hover:text-white transition-colors p-2 -m-2 rounded-full hover:bg-white/5" title="Copy to Clipboard">
+                            <div class="flex items-center space-x-2 w-full justify-center sm:justify-start">
+                                <a href="mailto:pharawee@siam.organic" class="text-lg sm:text-xl font-black text-white hover:text-bluenight-accent transition-colors truncate">pharawee@siam.organic</a>
+                                <button onclick="copyToClipboard('pharawee@siam.organic')" class="text-slate-500 hover:text-white transition-colors p-2 -m-2 rounded-full hover:bg-white/5 shrink-0" title="Copy to Clipboard">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
                                 </button>
                             </div>
@@ -557,7 +557,7 @@
     </footer>
 
     <!-- Native Smooth Toast -->
-    <div id="toast-notif" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white text-black text-xs px-4 py-2.5 rounded-full shadow-lg transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none z-50 flex items-center space-x-2">
+    <div id="toast-notif" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white text-black text-xs px-4 py-2.5 rounded-full shadow-lg transition-all duration-300 transform translate-y-20 opacity-0 pointer-events-none z-50 flex items-center space-x-2 w-max max-w-[90vw]">
         <svg class="w-3.5 h-3.5 text-bluenight-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
         <span lang-content="en">Copied to clipboard successfully!</span>
         <span lang-content="th">คัดลอกอีเมลเรียบร้อยแล้ว!</span>
